@@ -20,15 +20,17 @@ export class QuestionAndAnswers {
 
      @Prop({required: true})
      answers: [{
-          text: {{
-               id:string
-               answer: string,
-               voice:string,
-               image:string
-          }, {correctAnswer: {
-               correctId:string,
-               correctAnswer: string
-          }}},
+          text: [{
+               answer: {
+                    id:string
+                    answer: string,
+                    voice:string,
+                    image:string
+          }, 
+               correctAnswer: {
+                    correctId:string,
+                    correctAnswer: string
+          }}],
           connect: [
           {
                question: {
@@ -42,8 +44,7 @@ export class QuestionAndAnswers {
                     answer:string,
                     voice:string,
                },
-          }
-     ]
+          }]
      }]
 
 }

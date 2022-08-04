@@ -25,7 +25,7 @@ export class JwtStrategy extends PassportStrategy (Strategy, 'jwt') {
           sub: string, email: string
      }) {
           const user = await this.userModel.findOne({email: payload.email})
-          delete user.password
+          // delete user.password
           return user
      }
 }

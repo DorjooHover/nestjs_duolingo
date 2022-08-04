@@ -17,8 +17,6 @@ export class User {
      @Prop()
      phone: string
 
-     @Prop({required: true})
-     password: string
 
      @Prop({public_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Languages', required: true}})
      languages: [{

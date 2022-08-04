@@ -23,20 +23,21 @@ export class QuestionAndAnswersDto {
      @IsNotEmpty()
      @IsArray()
      answers: [{
-          text: {{
-               id:string,
-               answer:string,
-               voide:string,
-               image:string
+          text:[ {
+               answer: {
+                    id:string,
+                    answer:string,
+                    voide:string,
+                    image:string
           },
-          {
+          
                correctAnswer: {
                     correctId: string,
                     correctAnswer:string
                }
-          }
-          },
-          connect: [
+          
+          }],
+          connectAnswer: [
                {
                     question: {
                          id:string,

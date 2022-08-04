@@ -12,7 +12,7 @@ import {
    
      @IsString()
      @IsNotEmpty()
-     password: string;
+     image: string;
 
      @IsString()
      @IsNotEmpty()

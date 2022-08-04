@@ -23,13 +23,14 @@ export class AuthService {
                )
           }
 
-          const hash = await argon.hash(dto.password)
+          // const hash = await argon.hash(dto.password)
           
           try {
                 user = await this.userModel.create({
                     email: dto.email,
                     name: dto.name,
-                    password: hash,
+                    image: dto.image
+                    // password: hash,
                     // languages: dto.languages
                })
                return this.signToken(user._id, user.email )
@@ -48,15 +49,15 @@ export class AuthService {
           }
 
           // compare password
-          const passwordMatch = await argon.verify(
-               user.password, dto.password
-          )
+          // const passwordMatch = await argon.verify(
+          //      user.password, dto.password
+          // )
 
-          if(!passwordMatch) {
-               throw new ForbiddenException(
-                    'Нууц үг алдаатай байна'
-               )
-          }
+          // if(!passwordMatch) {
+          //      throw new ForbiddenException(
+          //           'Нууц үг алдаатай байна'
+          //      )
+          // }
           return this.signToken(user._id, user.email )
      }
 
@@ -76,6 +77,8 @@ export class AuthService {
                     secret: secret
                }
           )
+
+          console.log(token)
 
           return {
                access_token: token
