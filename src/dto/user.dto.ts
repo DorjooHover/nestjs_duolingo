@@ -9,5 +9,6 @@ export class UserDto {
       }]
       image: string
       heart: number
+      age: string
 }
 

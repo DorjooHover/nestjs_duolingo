@@ -24,14 +24,17 @@ export class AuthService {
           }
 
           // const hash = await argon.hash(dto.password)
-          
           try {
                 user = await this.userModel.create({
                     email: dto.email,
                     name: dto.name,
-                    image: dto.image
+                    image: dto.image,
                     // password: hash,
-                    // languages: dto.languages
+                    languages: dto.languages,
+                    hearAbout: dto.hearAbout,
+                    knowledge: dto.knowledge,
+                    level: dto.level,
+                    age: dto.age
                })
                return this.signToken(user._id, user.email )
           } catch (error) {

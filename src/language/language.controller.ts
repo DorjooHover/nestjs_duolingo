@@ -3,7 +3,7 @@ import { LanguageService } from "./language.service";
 import { LanguageDto } from '../dto';
 import { JwtGuard } from '../auth/guard/jwt.guard';
 
-@UseGuards(JwtGuard)
+// @UseGuards(JwtGuard)
 @Controller('languages')
 export class LanguageController {
      constructor(private service:LanguageService) {}

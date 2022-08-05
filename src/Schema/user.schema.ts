@@ -32,6 +32,18 @@ export class User {
      @Prop({required: true, default: false})
      isAdmin: boolean
 
+     @Prop({required: true})
+     hearAbout: string
+
+     @Prop({required: true})
+     knowledge: string
+
+     @Prop({required: true})
+     level: string
+     
+     @Prop({required: true})
+     age: string
+     
 }
 
 export const UserSchema = SchemaFactory.createForClass(User)

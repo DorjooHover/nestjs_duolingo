@@ -1,0 +1,30 @@
+{
+     "name": "nestjs_duolingo",
+     "description": "",
+     "website": "https://tooljet.io/",
+     "repository": "https://github.com/DorjooHover/nestjs_duolingo",
+     "logo": "https://app.tooljet.io/assets/images/logo.svg",
+     "success_url": "/",
+     "scripts":{
+       "predeploy": "npm install && npm run build"
+     },
+     "env": {
+       "NODE_ENV": {
+         "description": "Environment [production/development]",
+         "value": "production"
+       }
+     },
+     "formation": {
+       "web": {
+         "quantity": 1
+       }
+     },
+     "image": "heroku/nodejs",
+     "addons": ["heroku-"],
+     "buildpacks": [
+       {
+         "url": "heroku/nodejs"
+       }
+     ]
+   }
+   

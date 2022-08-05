@@ -25,7 +25,7 @@ export class LanguageService {
      }
 
      async views() {
-         const languages = await this.languageModel.find({}).select('name units lessons image')
+         const languages = await this.languageModel.find({}).select('name  image')
          if(!languages) {
           throw new ForbiddenException(
                'Бүртгэгдсэн хэл байхгүй байна.'

@@ -2,7 +2,8 @@ import {
      IsEmail,
      IsNotEmpty,
      IsString,
-     IsArray
+     IsArray,
+     IsNumber
    } from 'class-validator';
    
    export class AuthDto {
@@ -18,11 +19,29 @@ import {
      @IsNotEmpty()
      name: string
 
-    //  @IsArray()
-    //  @IsNotEmpty()
-    //  languages: [{
-    //   public_id: string
-    //  }]
+     @IsString()
+     @IsNotEmpty()
+     hearAbout: string
+
+     @IsString()
+     @IsNotEmpty()
+     knowledge: string
+
+     @IsString()
+     @IsNotEmpty()
+     level: string
+
+     @IsString()
+     @IsNotEmpty()
+     age: string
+
+     @IsArray()
+     @IsNotEmpty()
+     languages: [{
+      public_id: string
+     }]
+
+     
    }
 
    export class SigninDto {
